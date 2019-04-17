@@ -1,4 +1,4 @@
-# Ansible Yum Repo Caching Proxy Role
+# Yum Repo Caching Proxy Ansible Role
 
 This role is used to set up a yum caching proxy server. 
 
