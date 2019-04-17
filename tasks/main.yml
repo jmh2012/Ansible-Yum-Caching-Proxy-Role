@@ -1,0 +1,30 @@
+---
+
+- name: install version-locked squid
+  yum:
+    name: "{{ squid_version }}"
+    state: installed
+
+- name: ensure caching directory exists
+  file:
+    path: {{ cache_directory }}
+    state: directory
+    mode: 750
+    owner: squid
+    group: squid
+
+- name: copy squid.conf template
+  template:
+    src: etc/squid/squid.conf.j2
+    dest: /etc/squid/squid.conf.j2
+    owner: root
+    group: root
+    mode: 644
+  notify: 
+    - "restart squid"
+
+- name: start and chkconfig squid
+  service:
+    name: squid
+    state: started
+    enabled: true

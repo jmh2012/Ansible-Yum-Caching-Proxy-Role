@@ -1,0 +1,12 @@
+---
+
+
+squid_version: squid-3.5.20
+
+localnetwork_allow: 10.0.0.0/8
+default_port: 3128
+
+cache_directory: /var/spool/squid
+cache_max_store_mb: 1000
+first_level_subdirectories: 16
+second_level_subdirectories: 256
