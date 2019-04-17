@@ -16,7 +16,7 @@
 - name: copy squid.conf template
   template:
     src: etc/squid/squid.conf.j2
-    dest: /etc/squid/squid.conf.j2
+    dest: /etc/squid/squid.conf
     owner: root
     group: root
     mode: 644
