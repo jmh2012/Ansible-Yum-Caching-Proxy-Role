@@ -9,7 +9,7 @@ Clients can configure yum to the proxy by adding the proxy option under the [mai
 proxy=http://<servername>:3128/
 ```
 
-The yum fastest mirror plugin should also be disabled on clients so that the proxy doesn't need to cache rpms from multiple sources.
+Repo files in /etc/yum.repos.d should be using a single baseurl instead of a mirrorlist, if you would rather use a mirrorlist the yum fastest mirror plugin should be disabled on clients since it might result in more cache misses.
 In /etc/yum/pluginconf.d/fastestmirror.conf set:
 ```
 enabled=0

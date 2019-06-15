@@ -47,7 +47,8 @@ http_access deny all
 # Squid normally listens to port 3128
 http_port {{ default_port }}
 
-# Uncomment and adjust the following to add a disk cache directory.
+
+maximum_object_size {{ max_file_size_mb }} MB
 cache_dir ufs {{ cache_directory }} {{ cache_max_store_mb }} {{ first_level_subdirectories }} {{ second_level_subdirectories }}
 
 # Leave coredumps in the first cache dir
