@@ -7,7 +7,7 @@
 
 - name: ensure caching directory exists
   file:
-    path: {{ cache_directory }}
+    path: "{{ cache_directory }}"
     state: directory
     mode: 750
     owner: squid
